@@ -14,17 +14,16 @@
   <b>Latitude:</b>
   <%= @location.latitude %>
 </p>
-<h3> Ιατρεία κοντά σε <%= @location.address %> και <%= @city %> kai se ip <%= @ip_address %></h3>
+<h3> Ιατρεία κοντά σε <%= @location.address %> και <%= @city %> kai thesi <%= @coords %></h3>
 <ul>
 	
-		<% for location in @location.nearbys(5) %>
+		<% for location in Location.near(@coords) %>
 		<li>
 			<%= link_to location.address, location %>
 			</li>
 		<% end %>
 		
 		</ul>
-
 
 <%= link_to 'Edit', edit_location_path(@location) %> |
 <%= link_to 'Back', locations_path %>

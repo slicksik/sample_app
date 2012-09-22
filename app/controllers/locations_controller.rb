@@ -1,5 +1,13 @@
 class LocationsController < ApplicationController
+  before_filter :userip
+  
+  def userip
+    @coords = request.location.coordinates
+  end
+  
+  
   # GET /locations
+  
   # GET /locations.json
   def index
     @locations = Location.all
