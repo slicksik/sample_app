@@ -14,6 +14,8 @@
   <b>Latitude:</b>
   <%= @location.latitude %>
 </p>
+
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@location.latitude}%2C#{@location.longitude}" %>
 <h3> Ιατρεία κοντά σε <%= @location.address %> και <%= @city %> kai thesi <%= @coords%></h3>
 <ul>
 	
