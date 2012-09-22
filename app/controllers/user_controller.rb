@@ -3,15 +3,15 @@ class UserController < ApplicationController
   def index
      @client = Geocoder.search(request.ip)
      @city = request.location.city
-     @ip = request.ip
-     @address = Geocoder.search("@ip")
+     @ip_address = request.ip
+    @s = request.location
      
      respond_to do |format|
        format.html # index.html.erb
        format.json { render json: @client}
      end
     end
- 
+
  
   end
   

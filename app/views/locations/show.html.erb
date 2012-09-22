@@ -14,7 +14,7 @@
   <b>Latitude:</b>
   <%= @location.latitude %>
 </p>
-<h3> Ιατρεία κοντά σε <%= @location.address %> </h3>
+<h3> Ιατρεία κοντά σε <%= @location.address %> και <%= @city %> kai se ip <%= @ip_address %></h3>
 <ul>
 	
 		<% for location in @location.nearbys(5) %>
