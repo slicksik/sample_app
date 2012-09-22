@@ -4,7 +4,7 @@ class UserController < ApplicationController
      @client = Geocoder.search(request.ip)
      @city = request.location.city
      @ip_address = request.ip
-    @s = request.location
+    @s = request.location.coordinates
      
      respond_to do |format|
        format.html # index.html.erb
