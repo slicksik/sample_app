@@ -3,6 +3,7 @@ class LocationsController < ApplicationController
   
   def userip
     @coords = request.location.coordinates
+    @konta = Geocoder.search(@coords)
   end
   
   
