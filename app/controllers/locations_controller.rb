@@ -2,7 +2,7 @@ class LocationsController < ApplicationController
   before_filter :userip
   
   def userip
-    @coords = request.location.city
+    @coords = request.location.coordinates
   end
   
   
