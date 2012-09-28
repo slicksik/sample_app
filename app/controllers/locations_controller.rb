@@ -1,22 +1,24 @@
 class LocationsController < ApplicationController
-  before_filter :userip
-  
-  def userip
-    @coords = request.location.coordinates
-    @konta = Geocoder.search(@coords)
-  end
-  
+
+    before_filter :userip
+
+    def userip
+      @coords = request.location.coordinates
+      @konta = Geocoder.search(@coords)
+    end 
   
   # GET /locations
-  
   # GET /locations.json
   def index
+  
     @locations = Location.all
     @json = Location.all.to_gmaps4rails
+
+    
  
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @locations }
+      format.json { render json: @location }
     end
   end
 
